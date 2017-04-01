@@ -11,9 +11,11 @@ export class AppComponent {
   title = 'app works!';
   list: User[];
 
-constructor(private service:UserService){}
+constructor(private service:UserService){
+  this.getUsers();
+}
 
   getUsers(){
-    return this.service.getUsers().subscribe(list=>this.list = list);
+    this.service.getUsers().subscribe(list=>this.list = list);
   }
 }

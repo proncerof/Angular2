@@ -9,7 +9,9 @@ import "rxjs/Rx";
 export class UserService {
 
   private url = "https://randomuser.me/api/?results=5";
-  constructor(private http:Http) { }
+  constructor(private http:Http) { 
+    this.http.get(this.url);
+  }
 
   getUsers (): Observable<User[]>{
     return this.http.get(this.url).
@@ -17,16 +19,18 @@ export class UserService {
             catch(this.handleError);
   }
 
-  private extractData(res: Response){ 
-    let users: User[];
+  private extractData(res: Response): User[]{ 
+    var users: User[] = [];
     for(let result of res.json()["results"]){
       users.push(
         new User(
-          result["gender"],
           result["name"]["first"],
           result["name"]["last"],
+          result["email"],
+          result["picture"]["medium"],
+          result["phone"]
         )
-      )
+      );
     }
     return users;
 
