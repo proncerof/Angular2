@@ -8,10 +8,12 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 export class PersonComponent implements OnInit {
 
   @Input() name;
+  @Input() surname;
   @Output() sendName = new EventEmitter<string>();
 
 
   send(){
+    this.name = "Pablo"
     this.sendName.emit(this.name);
   }
 
