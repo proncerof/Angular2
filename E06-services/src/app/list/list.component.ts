@@ -15,6 +15,7 @@ export class ListComponent implements OnInit {
     nombre: string;
     apellido: string;
     telefono: number;
+    telefonoRemove: number;
 
     displayText:string = "visible";
     visible:boolean = true;
@@ -34,7 +35,7 @@ export class ListComponent implements OnInit {
   }
 
   eliminarPorTelefono(){
-    this.service.eliminarPorTelefono(this.telefono);
+    this.service.eliminarPorTelefono(this.telefonoRemove);
   }
 
   add(){

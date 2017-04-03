@@ -1,8 +1,8 @@
 
 
 <h1>Lista Contactos</h1>
-<button (click)="toggle()">Show/hide table</button>
-<table [ngClass]="displayText">
+<button  class="btn btn-primary" (click)="toggle()">Show/hide table</button>
+<table class="table table-striped"  [ngClass]="displayText">
   <thead>
     <th>Nombre</th>
     <th>Apellido</th>
@@ -15,12 +15,12 @@
       <td>{{item.nombre}}</td>
       <td>{{item.apellido}}</td>
       <td>{{item.telefono}}</td>
-      <td><button (click)="eliminar(item)">Eliminar</button></td>
+      <td><button  class="btn btn-primary" (click)="eliminar(item)">Eliminar</button></td>
     </tr>  
   </tbody>
 </table>
 <h1>Eliminar por telefono</h1>
-  <input [(ngModel)]="telefono"/>
+  <input [(ngModel)]="telefonoRemove"/>
   <button (click)="eliminarPorTelefono()">Eliminar</button>
 
 
@@ -28,5 +28,5 @@
   <input [(ngModel)]="nombre"/>
   <input [(ngModel)]="apellido"/>
   <input [(ngModel)]="telefono"/>
-  <button (click)="add()">Añadir</button>
+  <button class="btn btn-primary" (click)="add()">Añadir</button>
 
