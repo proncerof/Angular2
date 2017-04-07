@@ -1,0 +1,5 @@
+<p>{{message.titulo}}</p>
+<p>{{message.cuerpo}}</p>
+<ul *ngFor="let item of messages">
+  <li><a routerLink="../{{item.id}}">{{item.titulo}}</a></li>
+</ul>
