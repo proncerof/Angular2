@@ -1,0 +1,22 @@
+<h1>Validacion</h1>
+<form #form="ngForm">
+  <label>Name</label>
+  <input type="text" #nombre="ngModel" [(ngModel)]="name" name="name" required/>
+  <small [hidden]="nombre.valid || nombre.pristine">Nombre requirido</small>
+  <br/><br/>
+
+  <label>Apellidos</label>
+  <input type="text" #apellidos="ngModel" [(ngModel)]="surname" name="surname" required/>
+  <small [hidden]="apellidos.valid || apellidos.pristine">Apelllido requerido</small>
+  <br/><br/>
+
+  <label>Correo</label>
+  <input type="text" [(ngModel)]="email" name="email" pattern=".+@.+\..+" required/><br/><br/>
+  <small [hidden]="nombre.valid || nombre.pristine">Nombre invalido</small>
+
+  <label>Telefono</label>
+  <input type="number" [(ngModel)]="telefono" name="telefono" /><br/><br/>
+
+  <input [disabled]="form.invalid" type="submit" value="crear" />
+
+</form>
