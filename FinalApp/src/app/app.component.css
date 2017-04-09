@@ -1,0 +1,12 @@
+#izq{
+    float: left;
+    width: 15%;
+}
+
+#centro{
+    float: left;
+}
+
+#drcha{
+    float: right;
+}

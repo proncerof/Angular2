@@ -24,7 +24,8 @@ export class ContactService {
 
   eliminarPorTelefono(telefono:number){
     var index = this.listContacto.findIndex(c=>c.telefono===telefono);
-    this.listContacto.splice(index,1);
+    if(index>-1)
+      this.listContacto.splice(index,1);
 
   }
 

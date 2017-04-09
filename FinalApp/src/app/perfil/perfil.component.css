@@ -1,0 +1,10 @@
+img{
+    float:left;
+    padding: 15px;
+    padding-left: 25px;
+}
+
+#nombre{
+    padding-top: 20px;
+    font-weight: bold;
+}

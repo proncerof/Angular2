@@ -16,4 +16,8 @@ export class OrdenacionComponent implements OnInit {
     this.servicio.subject.next(this.componente);
   }
 
+  sendComponente(){
+    this.servicio.subject.next(this.componente);
+  }
+
 }

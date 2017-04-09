@@ -1,6 +1,6 @@
-<select [componente]= "ngModel">
-  <optgroup>
+<div class="w3-panel w3-card" style="padding: 15px; align-items: center">
+  <select [(ngModel)]="componente" (change)="sendComponente()">
     <option value="comments">Comentarios</option>
     <option value="points">Puntuacion</option>
-  </optgroup>
-</select>
+ </select>
+</div>

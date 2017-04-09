@@ -1,5 +1,5 @@
-
-<div *ngIf="perfil">
+<div class="w3-panel w3-card" *ngIf="perfil">
   <img src="{{perfil.img}}">
-  <p>{{perfil.name}} {{perfil.surname}}</p>
+  <p id="nombre">{{perfil.name}} {{perfil.surname}}</p>
+  <p>Telefono: {{perfil.telephone}}</p>
 </div>
