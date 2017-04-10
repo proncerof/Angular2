@@ -1,4 +1,5 @@
-<ul *ngFor="let noticia of noticias | ordenacion:campo">
+  {{filtro}}
+<ul *ngFor="let noticia of noticias | ordenacion:campo | filtro:filtro">
   <div class="w3-panel w3-card">
     <app-noticia [noticia]="noticia"></app-noticia>
     <button style="float: right; margin-bottom: 10px">Eliminar</button>

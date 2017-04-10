@@ -13,6 +13,8 @@ import { OrdenacionComponent } from './ordenacion/ordenacion.component';
 import { OrdenacionPipe } from './ordenacion.pipe';
 import { OrdenacionService } from "app/ordenacion.service";
 import { Subject } from "rxjs";
+import { FiltroPipe } from './filtro.pipe';
+import { FiltradoService } from "app/filtrado.service";
 
 @NgModule({
   declarations: [
@@ -21,14 +23,15 @@ import { Subject } from "rxjs";
     NoticiaComponent,
     PerfilComponent,
     OrdenacionComponent,
-    OrdenacionPipe
+    OrdenacionPipe,
+    FiltroPipe
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule
   ],
-  providers: [NoticiasService, UsuarioService, OrdenacionService, Subject],
+  providers: [NoticiasService, UsuarioService, OrdenacionService, Subject, FiltradoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

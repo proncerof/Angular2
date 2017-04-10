@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { OrdenacionService } from "app/ordenacion.service";
+import { FiltradoService } from "app/filtrado.service";
 
 @Component({
   selector: 'app-ordenacion',
@@ -9,15 +10,19 @@ import { OrdenacionService } from "app/ordenacion.service";
 export class OrdenacionComponent implements OnInit {
 
   componente:string;
+  filtro:string;
 
-  constructor(private servicio:OrdenacionService) { }
+  constructor(private servicioOrdenacion:OrdenacionService, private servicioFiltrado:FiltradoService) { }
 
   ngOnInit() {
-    this.servicio.subject.next(this.componente);
   }
 
   sendComponente(){
-    this.servicio.subject.next(this.componente);
+    this.servicioOrdenacion.subject.next(this.componente);
+  }
+
+  sendFiltrado(){
+    this.servicioFiltrado.subject.next(this.filtro);
   }
 
 }
